@@ -16,10 +16,12 @@
 def get_city_temperature(city):
    if city == "Quito":
       return 22
-   if city == "Sao Paulo":
+   elif city == "Sao Paulo":
       return 17
-   if city == "San Francisco":
+   elif city == "San Francisco":
       return 16
+   else:
+      return "temperature not found"
 
 def get_city_weather(city):
 
@@ -32,4 +34,7 @@ def get_city_weather(city):
 
   temperature = get_city_temperature(city)
 
-  return str(temperature) + " degrees and " + sky_condition
+  if temperature is not None:
+     return str(temperature) + " degrees and " + sky_condition
+  else:
+     return "city not found"
